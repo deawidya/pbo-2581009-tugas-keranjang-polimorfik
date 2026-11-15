@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public abstract class Buku {
     // Atribut dibuat private
     private String judul;
@@ -39,6 +41,7 @@ public abstract class Buku {
 
     // Method untuk format rupiah
     protected static String formatRupiah(int angka) {
-        return "Rp" + String.format("%,d", angka).replace(',', '.');
+        return "Rp" + String.format(Locale.US, "%,d", angka)
+                .replace(',', '.');
     }
 }
